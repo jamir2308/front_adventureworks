@@ -20,9 +20,9 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
             <Image
-              src="/burger-icon.png"
+              src="https://gravatar.com/avatar/2c98abef048230002f96745b7d8ea58a?s=400&d=robohash&r=x"
               alt="Burger"
-              width={20}
+              width={40}
               height={20}
               className="opacity-70"
             />

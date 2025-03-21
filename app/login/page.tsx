@@ -1,6 +1,35 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario: email, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.response || 'Error en el login');
+      }
+
+      alert('¡Login exitoso!');
+      router.push('/dashboard/home');
+    } catch (error: any) {
+      alert(error.message || 'Ocurrió un error');
+    }
+  };
+
   return (
     <main className="min-h-screen flex">
       {/* Left side - Image */}
@@ -36,7 +65,9 @@ export default function Home() {
             </p>
           </div>
 
-          <button className="w-full flex items-center justify-center gap-3 bg-white text-gray-700 rounded-lg p-3 border hover:bg-gray-50 transition-colors">
+          {/* <button
+            className="w-full flex items-center justify-center gap-3 bg-white text-gray-700 rounded-lg p-3 border hover:bg-gray-50 transition-colors"
+          >
             <Image
               src="/google.svg"
               alt="Google logo"
@@ -44,7 +75,7 @@ export default function Home() {
               height={20}
             />
             Continue with Google
-          </button>
+          </button> */}
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -52,12 +83,13 @@ export default function Home() {
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-2 bg-[#f8f2f8] text-gray-500">
-                or Sign in with Email
+                Login
               </span>
             </div>
           </div>
 
-          <form className="space-y-6">
+          {/* Quitamos la lógica de submit y usamos onClick en el botón */}
+          <div className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm text-gray-700 mb-2">
                 Email
@@ -68,6 +100,8 @@ export default function Home() {
                 type="email"
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -81,6 +115,8 @@ export default function Home() {
                 type="password"
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
@@ -102,12 +138,13 @@ export default function Home() {
             </div>
 
             <button
-              type="submit"
+              type="button"
+              onClick={handleLogin} // Llamamos a la función al dar click
               className="w-full bg-purple-700 text-white rounded-lg py-3 hover:bg-purple-800 transition-colors"
             >
               Login
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </main>
