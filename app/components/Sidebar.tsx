@@ -31,17 +31,17 @@ export default function Sidebar() {
             <LayoutDashboard size={20} />
             <span>Home</span>
           </Link>
-          <Link href="/food-order" 
+          <Link href="/dashboard/sales" 
             className="flex items-center gap-3 px-2 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
             <ShoppingBag size={20} />
             <span>Ventas</span>
           </Link>
-          <Link href="/manage-menu" 
+          <Link href="/dashboard/products" 
             className="flex items-center gap-3 px-2 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
             <Menu size={20} />
             <span>Productos</span>
           </Link>
-          <Link href="/customer-review" 
+          <Link href="/dashboard/customers" 
             className="flex items-center gap-3 px-2 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
             <Users size={20} />
             <span>Clientes</span>
