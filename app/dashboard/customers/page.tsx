@@ -1,67 +1,62 @@
-export default function Sales() {
+export default function Clients() {
   return (
     <form className="bg-white text-gray-900 p-8 rounded-lg shadow-md max-w-3xl mx-auto">
       {/* Título principal */}
-      <h1 className="text-4xl text-purple-800 font-semibold text-center mb-10">
-        Ventas
+      <h1 className="text-4xl text-blue-800 font-semibold text-center mb-10">
+        Clientes
       </h1>
 
-      {/* Sección de ventas totales */}
+      {/* Sección de clientes totales */}
       <div className="mb-8">
-        <h2 className="text-2xl text-purple-700 font-semibold mb-4">Ventas totales - anuales y mensuales</h2>
+        <h2 className="text-2xl text-blue-700 font-semibold mb-4">Clientes totales - anuales y mensuales</h2>
         <div className="flex justify-between gap-4">
-          <button className="bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-400 focus:outline-none transition-all duration-300">
+          <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-400 focus:outline-none transition-all duration-300">
             Informe anual
           </button>
-          <button className="bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-400 focus:outline-none transition-all duration-300">
+          <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-400 focus:outline-none transition-all duration-300">
             Informe mensual
           </button>
         </div>
       </div>
 
-      {/* Top 10 productos */}
+      {/* Top 10 clientes */}
       <div className="mb-8">
-        <h2 className="text-2xl text-purple-700 font-semibold mb-4">Top 10 productos más vendidos</h2>
+        <h2 className="text-2xl text-blue-700 font-semibold mb-4">Top 10 clientes con más compras</h2>
         <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
-          <p className="text-center text-gray-600">Aquí se mostrarán los productos más vendidos.</p>
+          <p className="text-center text-gray-600">Aquí se mostrarán los clientes con más compras.</p>
         </div>
       </div>
 
-      {/* Categoría de productos */}
+      {/* Clientes por región */}
       <div className="mb-8">
-        <h2 className="text-2xl text-purple-700 font-semibold mb-4">Ventas por categoría de producto</h2>
-        <label htmlFor="opciones" className="block text-lg text-gray-700 mb-3">Selecciona una opción:</label>
+        <h2 className="text-2xl text-blue-700 font-semibold mb-4">Clientes por región/país</h2>
+        <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
+          <p className="text-center text-gray-600">Aquí se mostrarán los clientes según su región o país.</p>
+        </div>
+      </div>
+
+      {/* Tipo de clientes */}
+      <div className="mb-8">
+        <h2 className="text-2xl text-blue-700 font-semibold mb-4">Tipo de clientes</h2>
+        <label htmlFor="tipoClientes" className="block text-lg text-gray-700 mb-3">Selecciona una opción:</label>
         <select
-          id="opciones"
-          name="opciones"
-          className="w-full p-3 border-2 border-purple-400 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
+          id="tipoClientes"
+          name="tipoClientes"
+          className="w-full p-3 border-2 border-blue-400 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
         >
-          <option value="opcion1">Bicicletas</option>
-          <option value="opcion2">Accesorios para bicicletas</option>
-          <option value="opcion3">Piezas y componentes</option>
-          <option value="opcion4">Mantenimiento y cuidado</option>
-          <option value="opcion5">Ropa y calzado</option>
-          <option value="opcion6">Bicicross y BMX</option>
-          <option value="opcion7">Bicicletas para niños</option>
-          <option value="opcion8">Cicloturismo y viajes</option>
-          <option value="opcion9">Bicicletas de lujo o edición especial</option>
-          <option value="opcion10">Otros productos</option>
+          <option value="frecuentes">Clientes frecuentes</option>
+          <option value="nuevos">Clientes nuevos</option>
+          <option value="mayoristas">Clientes mayoristas</option>
+          <option value="empresas">Empresas</option>
+          <option value="otros">Otros</option>
         </select>
       </div>
 
-      {/* Ingresos por región */}
-      <div className="mb-8">
-        <h2 className="text-2xl text-purple-700 font-semibold mb-4">Ingresos por región/país</h2>
-        <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
-          <p className="text-center text-gray-600">Aquí se mostrarán los ingresos por región/país.</p>
-        </div>
-      </div>
-
-      {/* Clientes con más compras */}
+      {/* Clientes inactivos */}
       <div>
-        <h2 className="text-2xl text-purple-700 font-semibold mb-4">Clientes con más compras</h2>
+        <h2 className="text-2xl text-blue-700 font-semibold mb-4">Clientes inactivos</h2>
         <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
-          <p className="text-center text-gray-600">Aquí se mostrarán los clientes con más compras.</p>
+          <p className="text-center text-gray-600">Aquí se mostrarán los clientes que no han realizado compras recientes.</p>
         </div>
       </div>
     </form>
