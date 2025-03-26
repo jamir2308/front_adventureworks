@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 
-export default function Home() {
-  // Datos de ejemplo
+export default function Products() {
+  // Datos de ejemplo de productos para una tienda de partes de bicicletas
   const products = [
-    { id: 1, name: "Laptop", stock: 25, sold: 50 },
-    { id: 2, name: "Teclado", stock: 15, sold: 30 },
-    { id: 3, name: "Mouse", stock: 20, sold: 40 },
-    { id: 4, name: "Monitor", stock: 10, sold: 25 },
-    { id: 5, name: "Auriculares", stock: 18, sold: 35 },
-    { id: 6, name: "Impresora", stock: 8, sold: 15 },
-    { id: 7, name: "Tablet", stock: 12, sold: 22 },
-    { id: 8, name: "Cámara", stock: 7, sold: 18 },
-    { id: 9, name: "Micrófono", stock: 14, sold: 27 },
-    { id: 10, name: "Router", stock: 9, sold: 20 },
+    { id: 1, name: "Cadena Shimano", stock: 30, sold: 60 },
+    { id: 2, name: "Llanta Maxxis", stock: 20, sold: 45 },
+    { id: 3, name: "Pedales Crankbrothers", stock: 15, sold: 35 },
+    { id: 4, name: "Frenos hidráulicos Shimano", stock: 10, sold: 25 },
+    { id: 5, name: "Casco Giro", stock: 25, sold: 50 },
+    { id: 6, name: "Luces LED recargables", stock: 18, sold: 40 },
+    { id: 7, name: "Portabidón Elite", stock: 12, sold: 22 },
+    { id: 8, name: "Asiento Ergonómico", stock: 9, sold: 18 },
+    { id: 9, name: "Cambio SRAM GX", stock: 14, sold: 30 },
+    { id: 10, name: "Bomba de aire portátil", stock: 20, sold: 38 },
   ];
 
   // Estado para el filtro de búsqueda
@@ -36,11 +36,11 @@ export default function Home() {
       {/* Cuadro de búsqueda con texto explicativo */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">
-          ✨ Escribe el producto que necesitas:
+          🔍 Busca la parte de bicicleta que necesitas:
         </label>
         <input
           type="text"
-          placeholder="🔍 Buscar producto..."
+          placeholder="🔎 Buscar producto..."
           className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -50,7 +50,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Lista de productos filtrados */}
         <div className="bg-white p-6 shadow-lg rounded-xl border border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-700 mb-3">📦 Productos</h2>
+          <h2 className="text-lg font-semibold text-gray-700 mb-3">🚴‍♂️ Partes de Bicicleta</h2>
           <ul className="space-y-2">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
@@ -63,7 +63,7 @@ export default function Home() {
                 </li>
               ))
             ) : (
-              <p className="text-gray-500">No hay productos encontrados.</p>
+              <p className="text-gray-500">No se encontraron productos.</p>
             )}
           </ul>
         </div>
