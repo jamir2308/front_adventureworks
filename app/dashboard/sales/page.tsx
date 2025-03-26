@@ -109,7 +109,7 @@ export default function Sales() {
           Ingresos por región/país
         </h2>
         <div className="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
-          {regionIncome.length === 0 ? (
+          {/* {regionIncome.length === 0 ? (
             <p className="text-center text-gray-600">Cargando...</p>
           ) : (
             <ul>
@@ -119,7 +119,7 @@ export default function Sales() {
                 </li>
               ))}
             </ul>
-          )}
+          )} */}
         </div>
       </div>
 
