@@ -54,12 +54,12 @@ export default function Sidebar() {
 
                 <p className="text-xs font-semibold text-gray-400 mt-8 mb-4 px-2">OTHERS</p>
                 <nav className="space-y-1">
-                    <Link href="/account"
+                    <Link href="/dashboard/account"
                         className="flex items-center gap-3 px-2 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
                         <UserCircle size={20} />
                         <span>Cuenta</span>
                     </Link>
-                    <Link href="/help"
+                    <Link href="/dashboard/help"
                         className="flex items-center gap-3 px-2 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
                         <HelpCircle size={20} />
                         <span>Ayuda</span>

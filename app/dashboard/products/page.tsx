@@ -1,9 +1,9 @@
-"use client"; // Habilitar el uso de hooks
+"use client"; 
 
 import { useState } from "react";
 
 export default function Products() {
-  // Datos de ejemplo de productos para una tienda de partes de bicicletas
+
   const products = [
     { id: 1, name: "Cadena Shimano", stock: 30, sold: 60 },
     { id: 2, name: "Llanta Maxxis", stock: 20, sold: 45 },
